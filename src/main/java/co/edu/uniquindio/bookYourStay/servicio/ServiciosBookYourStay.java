@@ -13,7 +13,5 @@ public interface ServiciosBookYourStay {
 
     Cliente validarCliente(String correo, String contrasena) throws Exception;
 
-    Cliente validarAdmin(String correo, String contrasena) throws Exception;
-
     boolean verificarCodigo(String codigo) throws Exception;
 }

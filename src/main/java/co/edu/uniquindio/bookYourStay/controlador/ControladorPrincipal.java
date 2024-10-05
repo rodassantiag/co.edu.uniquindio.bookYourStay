@@ -84,11 +84,6 @@ public class ControladorPrincipal implements ServiciosBookYourStay {
     }
 
     @Override
-    public Cliente validarAdmin(String correo, String contrasena) throws Exception {
-        return bookYourStay.validarAdmin(correo, contrasena);
-    }
-
-    @Override
     public boolean verificarCodigo(String codigo) throws Exception {
         return bookYourStay.verificarCodigo(codigo);
     }

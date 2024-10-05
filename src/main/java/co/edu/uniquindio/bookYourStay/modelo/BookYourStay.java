@@ -13,13 +13,11 @@ import java.util.Random;
 public class BookYourStay implements ServiciosBookYourStay {
 
     private ArrayList<Cliente> clientes;
-    private ArrayList<Cliente> administradores;
 
 
     public BookYourStay() {
         this.clientes = new ArrayList<>();
-        this.administradores = new ArrayList<>();
-        this.administradores.add(Cliente.builder()
+        this.clientes.add(Cliente.builder()
                 .rol(Rol.ADMIN)
                 .correo("pepito")
                 .contrasena("123")
@@ -137,21 +135,13 @@ public class BookYourStay implements ServiciosBookYourStay {
 
     public Cliente obtenerClientePorCorreo(String correo){
         for (Cliente cliente : clientes){
-            if (cliente.getCorreo().equals(correo) && cliente.getRol() == Rol.CLIENTE){
+            if (cliente.getCorreo().equals(correo)){
                 return cliente;
             }
         }
         return null;
     }
 
-    public Cliente obtenerAdminPorCorreo(String correo){
-        for (Cliente admin : administradores){
-            if (admin.getCorreo().equals(correo) && admin.getRol() == Rol.ADMIN){
-                return admin;
-            }
-        }
-        return null;
-    }
 
     @Override
     public Cliente validarCliente(String correo, String contrasena) throws Exception{
@@ -161,21 +151,10 @@ public class BookYourStay implements ServiciosBookYourStay {
                 return cliente;
             }
         }
-
-
         throw new Exception("Los datos de ingreso son incorrectos");
     }
 
-    @Override
-    public Cliente validarAdmin(String correo, String contrasena) throws Exception{
-        Cliente admin = obtenerAdminPorCorreo(contrasena);
-        if (admin != null) {
-            if (admin.getCorreo().equals(correo)) {
-                return admin;
-            }
-        }
-        throw new Exception("Los datos de ingreso son incorrectos");
-    }
+
 
     @Override
     public boolean verificarCodigo(String codigo) throws Exception {
