@@ -16,7 +16,7 @@ public class BookYourStayApp extends Application {
         Scene scene = new Scene(parent);
         stage.setScene(scene);
         stage.setTitle("BookYourStay");
-        stage.setResizable(false);
+        //stage.setResizable(false);
         stage.show();
 
     }

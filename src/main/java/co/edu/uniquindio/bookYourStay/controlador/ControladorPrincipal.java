@@ -40,7 +40,7 @@ public class ControladorPrincipal implements ServiciosBookYourStay {
         // Crear un nuevo escenario (ventana)
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setResizable(false);
+        //stage.setResizable(false);
         stage.setTitle(tituloVentana);
 
         // Mostrar la nueva ventana
