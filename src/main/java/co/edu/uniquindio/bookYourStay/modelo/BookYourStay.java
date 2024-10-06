@@ -28,7 +28,7 @@ public class BookYourStay implements ServiciosBookYourStay {
     public Cliente agregarCliente(String cedula, String nombre, String telefono, String correo,
                                   String contrasena) throws Exception {
 
-        if (cedula.isEmpty()) {
+        if (cedula.isBlank()) {
             throw new Exception("La cédula es obligatoria");
         }
 
@@ -40,7 +40,7 @@ public class BookYourStay implements ServiciosBookYourStay {
             throw new Exception("Ya existe un usuario con la misma cédula");
         }
 
-        if (nombre.isEmpty()) {
+        if (nombre.isBlank()) {
             throw new Exception("El nombre es obligatorio");
         }
 
