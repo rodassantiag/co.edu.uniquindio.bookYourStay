@@ -100,6 +100,7 @@ public class BookYourStay implements ServiciosBookYourStay {
                 String mensaje = "Hola "+cliente.getNombre()+", Su código de verificación es: "+cliente.getId()+ " gracias por registrarse en nuestra app";
                 EnvioEmail envioEmail = new EnvioEmail(correo, asunto, mensaje);
                 envioEmail.enviarNotificacion();
+                System.out.println(cliente.getId());
             }
 
         }
@@ -116,6 +117,7 @@ public class BookYourStay implements ServiciosBookYourStay {
                 String mensaje = "Su nuevo código de verificación es: "+cliente.getId()+", gracias por registrarse en nuestra app";
                 EnvioEmail envioEmail = new EnvioEmail(correo, asunto, mensaje);
                 envioEmail.enviarNotificacion();
+                System.out.println(cliente.getId());
 
             }
         }
@@ -157,13 +159,20 @@ public class BookYourStay implements ServiciosBookYourStay {
 
     @Override
     public boolean verificarCodigo(String codigo) throws Exception {
-        for (Cliente cliente : clientes){
-            if (cliente.getRol() == Rol.CLIENTE && cliente.getId().equals(codigo) ){
+        boolean codigoValido = false;
+
+        for (Cliente cliente : clientes) {
+            if (cliente.getRol() == Rol.CLIENTE && cliente.getId().equals(codigo)) {
                 cliente.setPrimerLogin(false);
-            }else {
-                throw new Exception("El código es incorrecto");
+                codigoValido = true;
+                break;
             }
         }
+
+        if (!codigoValido) {
+            throw new Exception("El código es incorrecto");
+        }
+
         return true;
     }
 
@@ -174,12 +183,4 @@ public class BookYourStay implements ServiciosBookYourStay {
 
         return null;
     }
-
-
-
-
-
-
-
-
 }
