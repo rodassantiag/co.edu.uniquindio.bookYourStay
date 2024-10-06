@@ -14,7 +14,6 @@ public class BookYourStay implements ServiciosBookYourStay {
 
     private ArrayList<Cliente> clientes;
 
-
     public BookYourStay() {
         this.clientes = new ArrayList<>();
         this.clientes.add(Cliente.builder()
@@ -126,7 +125,7 @@ public class BookYourStay implements ServiciosBookYourStay {
 
     public Cliente obtenerCliente(String cedula){
         for (Cliente cliente : clientes){
-            if (cliente.getCedula().equals(cedula) && cliente.getRol() == Rol.CLIENTE){
+            if (cliente.getCedula() != null && cliente.getCedula().equals(cedula) && cliente.getRol() == Rol.CLIENTE){
                 return cliente;
             }
         }

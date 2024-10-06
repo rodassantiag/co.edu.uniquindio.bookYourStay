@@ -19,7 +19,7 @@ public class EnvioEmail implements Notificacion {
 
 
         Email email = EmailBuilder.startingBlank()
-                .from("uniEventos8@gmail.com")
+                .from("bookyourstay34@gmail.com")
                 .to(destinatario)
                 .withSubject(asunto)
                 .withPlainText(mensaje)
@@ -27,7 +27,7 @@ public class EnvioEmail implements Notificacion {
 
 
         try (Mailer mailer = MailerBuilder
-                .withSMTPServer("smtp.gmail.com", 587, "uniEventos8@gmail.com", "u s s v t t m l e z q j z u p x")
+                .withSMTPServer("smtp.gmail.com", 587, "bookyourstay34@gmail.com", "dhwl lyht ucbg zgmh")
                 .withTransportStrategy(TransportStrategy.SMTP_TLS)
                 .withDebugLogging(true)
                 .buildMailer()) {
