@@ -159,21 +159,13 @@ public class BookYourStay implements ServiciosBookYourStay {
 
     @Override
     public boolean verificarCodigo(String codigo) throws Exception {
-        boolean codigoValido = false;
-
         for (Cliente cliente : clientes) {
             if (cliente.getRol() == Rol.CLIENTE && cliente.getId().equals(codigo)) {
                 cliente.setPrimerLogin(false);
-                codigoValido = true;
-                break;
+                return true;
             }
         }
-
-        if (!codigoValido) {
-            throw new Exception("El código es incorrecto");
-        }
-
-        return true;
+        throw new Exception("El código es incorrecto");
     }
 
     public Alojamiento agregarAlojamiento(String nombre, String ciudad, String descripcion, int capacidadMaxima)throws Exception{
