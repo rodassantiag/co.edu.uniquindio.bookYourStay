@@ -15,7 +15,7 @@ public class ValidacionControlador {
     public void verificarCodigo(ActionEvent actionEvent) throws Exception {
 
         try {
-            String codigoVerificacion = txtCodigoVerificacion.getText();
+            String codigoVerificacion = txtCodigoVerificacion.getText().trim();
 
             if (controladorPrincipal.verificarCodigo(codigoVerificacion)){
                 controladorPrincipal.crearAlerta("Su cuenta se ha validado exitosamente", Alert.AlertType.INFORMATION);

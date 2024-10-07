@@ -100,7 +100,6 @@ public class BookYourStay implements ServiciosBookYourStay {
                 String mensaje = "Hola "+cliente.getNombre()+", Su código de verificación es: "+cliente.getId()+ " gracias por registrarse en nuestra app";
                 EnvioEmail envioEmail = new EnvioEmail(correo, asunto, mensaje);
                 envioEmail.enviarNotificacion();
-                System.out.println(cliente.getId());
             }
 
         }
@@ -117,7 +116,6 @@ public class BookYourStay implements ServiciosBookYourStay {
                 String mensaje = "Su nuevo código de verificación es: "+cliente.getId()+", gracias por registrarse en nuestra app";
                 EnvioEmail envioEmail = new EnvioEmail(correo, asunto, mensaje);
                 envioEmail.enviarNotificacion();
-                System.out.println(cliente.getId());
 
             }
         }

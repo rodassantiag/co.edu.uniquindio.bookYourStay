@@ -61,6 +61,7 @@ public class LoginControlador {
 
     public void irPanelCliente() throws Exception {
         controladorPrincipal.navegarVentana("/panelCliente.fxml", "Panel cliente");
+        cerrarVentana();
     }
 
     public void irInicio() throws Exception {

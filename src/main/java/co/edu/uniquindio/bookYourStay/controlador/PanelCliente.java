@@ -10,23 +10,24 @@ import java.util.ResourceBundle;
 
 public class PanelCliente implements Initializable {
 
-    private final Cliente cliente;
-    @FXML private Text nombre;
+//    private final Cliente cliente;
+//    @FXML
+//    private Text nombre;
 
     public PanelCliente(){
         ControladorPrincipal controladorPrincipal = ControladorPrincipal.getInstancia();
-        this.cliente = controladorPrincipal.obtenerSesion();
+//        this.cliente = controladorPrincipal.obtenerSesion();
     }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        if(this.cliente != null){
-            this.nombre.setText(cliente.getNombre());
-        }else{
-            System.out.println("Es null");
-        }
+//        if(this.cliente != null){
+//            this.nombre.setText(cliente.getNombre());
+//        }else{
+//            System.out.println("Es null");
+//        }
 
     }
 }
